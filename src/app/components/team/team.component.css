@@ -1,0 +1,7 @@
+.team-container {
+  list-style: none;
+  padding: 8px;
+  display: grid;
+  row-gap: 5px;
+  /* text-transform: capitalize; */
+}

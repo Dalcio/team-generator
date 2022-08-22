@@ -1,0 +1,69 @@
+h1,
+h2,
+h3,
+h4,
+h6 {
+  text-align: center;
+}
+
+hr {
+  border-color: #d4d4d5;
+  opacity: 0.6;
+}
+
+.wrapper {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 1fr;
+  place-items: center;
+  padding: 1rem;
+}
+
+.wrapper > .container {
+  padding: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.elements-list {
+  padding: 1rem;
+  list-style: none;
+  display: grid;
+  row-gap: 8px;
+}
+
+.elements-list li {
+  /* text-transform: capitalize; */
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.elements-list li:hover {
+  color: rgb(195, 95, 95);
+}
+
+.add-element {
+  display: grid;
+  row-gap: 5px;
+}
+
+.team-generator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.team-generator > :first-child > input {
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.team-generator > button {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+.error-message {
+  padding: 0.25rem;
+  font-size: 1.25rem;
+  color: red;
+}

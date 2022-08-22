@@ -1,0 +1,49 @@
+<div class="wrapper">
+  <div class="ui card container">
+    <h1>Team Generator</h1>
+    <hr />
+    <ul class="ui card elements-list">
+      <h5 *ngIf="members">There's no member to generate the teams</h5>
+      <li *ngFor="let member of members">{{ member | titlecase }}</li>
+    </ul>
+    <div class="add-element">
+      <div class="ui input">
+        <input
+          #newMember
+          type="text"
+          placeholder="Name"
+          [value]="newMemberName"
+          (input)="onInput(newMember.value)"
+        />
+      </div>
+      <button
+        (click)="addMember()"
+        class="ui primary button"
+        [disabled]="newMemberName.length === 0"
+      >
+        Add
+      </button>
+    </div>
+    <div class="team-generator">
+      <div class="ui input">
+        <input
+          type="number"
+          placeholder="# of teams"
+          #teamsQuantity
+          min="0"
+          [value]="teamsQt"
+          (input)="changeTeamsQuantity(teamsQuantity.value)"
+        />
+      </div>
+      <button
+        class="ui positive button"
+        (click)="generateTeams()"
+        [disabled]="teamsQt <= 0"
+      >
+        Generate
+      </button>
+    </div>
+    <app-team [teams]="teams"></app-team>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </div>
+</div>

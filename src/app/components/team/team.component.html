@@ -1,0 +1,10 @@
+<div *ngIf="teams.length > 0">
+  <div class="team-container" *ngFor="let team of teams; let i = index">
+    <div class="team-container">
+      <h5>Team {{ i + 1 }}</h5>
+      <ul class="ui card team-container">
+        <li *ngFor="let member of team">{{ member }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
